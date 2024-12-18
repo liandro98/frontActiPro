@@ -1,0 +1,56 @@
+<app-navigation></app-navigation>
+<div class="container">
+    <h2>Crear Noticia</h2>
+    <form [formGroup]="noticiasForm" (ngSubmit)="onSubmit()">
+      <!-- Título -->
+      <div>
+        <label for="titulo">Título:</label>
+        <input id="titulo" formControlName="titulo" type="text" />
+        <div *ngIf="noticiasForm.get('titulo')?.invalid && noticiasForm.get('titulo')?.touched">
+          <small *ngIf="noticiasForm.get('titulo')?.hasError('required')">El título es obligatorio.</small>
+          <small *ngIf="noticiasForm.get('titulo')?.hasError('minlength')">El título debe tener al menos 5 caracteres.</small>
+        </div>
+      </div>
+  
+      <!-- Descripción -->
+      <div>
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" formControlName="descripcion"></textarea>
+        <div *ngIf="noticiasForm.get('descripcion')?.invalid && noticiasForm.get('descripcion')?.touched">
+          <small *ngIf="noticiasForm.get('descripcion')?.hasError('required')">La descripción es obligatoria.</small>
+          <small *ngIf="noticiasForm.get('descripcion')?.hasError('maxlength')">Máximo 150 caracteres.</small>
+        </div>
+      </div>
+  
+      <!-- Contenido -->
+      <div>
+        <label for="contenido">Contenido:</label>
+        <textarea id="contenido" formControlName="contenido"></textarea>
+        <div *ngIf="noticiasForm.get('contenido')?.invalid && noticiasForm.get('contenido')?.touched">
+          <small>El contenido es obligatorio.</small>
+        </div>
+      </div>
+  
+      <!-- Autor -->
+      <div>
+        <label for="autor">Autor:</label>
+        <input id="autor" formControlName="autor" type="text" />
+        <div *ngIf="noticiasForm.get('autor')?.invalid && noticiasForm.get('autor')?.touched">
+          <small>El autor es obligatorio.</small>
+        </div>
+      </div>
+  
+      <!-- Fecha -->
+      <div>
+        <label for="fecha">Fecha:</label>
+        <input id="fecha" formControlName="fecha" type="date" />
+        <div *ngIf="noticiasForm.get('fecha')?.invalid && noticiasForm.get('fecha')?.touched">
+          <small>La fecha es obligatoria.</small>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="noticiasForm.invalid">Guardar Noticia</button>
+      <button class="btn-danger" routerLink="/home"> Cancelar </button>
+    </form>
+  </div>
+  

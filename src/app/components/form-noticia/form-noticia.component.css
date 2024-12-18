@@ -1,0 +1,45 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+  }
+  
+  small {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-danger{
+    margin-top: 15px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #ff2600;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+  }
+  
