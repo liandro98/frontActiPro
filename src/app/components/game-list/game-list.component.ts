@@ -20,6 +20,12 @@ export class GameListComponent implements OnInit{
 
 }
 
+// Noticas locales
+
+
+
+// Noticas generadas de una API externa
+
 getNoticias() {
   const apiKey = 'b073c116789b49fdbf89d59c1b7d6079';
   const apiUrl = `https://newsapi.org/v2/top-headlines?country=US&category=${this.seccionSeleccionada}&apiKey=${apiKey}`;

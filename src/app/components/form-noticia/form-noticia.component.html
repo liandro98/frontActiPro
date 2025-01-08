@@ -1,4 +1,5 @@
 <app-navigation></app-navigation>
+<br>
 <div class="container">
     <h2>Crear Noticia</h2>
     <form [formGroup]="noticiasForm" (ngSubmit)="onSubmit()">
@@ -50,7 +51,39 @@
       </div>
   
       <button type="submit" [disabled]="noticiasForm.invalid">Guardar Noticia</button>
-      <button class="btn-danger" routerLink="/home"> Cancelar </button>
+      <button class="btn-danger" routerLink="/gestion"> Cancelar </button>
     </form>
   </div>
+  <br>
+  <!--Listado de noticias-->
+  <div class="container mt-4">
+    <h2 class="text-center">Lista de Noticias</h2>
+  
+    <div *ngIf="noticias.length > 0; else sinNoticias">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Fecha</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let noticia of noticias">
+            <td>{{ noticia.titulo }}</td>
+            <td>{{ noticia.autor }}</td>
+            <td>{{ noticia.fecha | date: 'shortDate' }}</td>
+            <td><button class="btn-danger"(click)="eliminarNoticias(noticia.idNoticia!)" > Eliminar </button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Mensaje para cuando no haya noticias -->
+    <ng-template #sinNoticias>
+      <p class="text-center text-muted">No hay noticias disponibles.</p>
+    </ng-template>
+  </div>
+  
   
