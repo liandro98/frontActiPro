@@ -1,6 +1,8 @@
 import { Component,OnInit,HostBinding  } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { NoticiasService } from 'src/app/services/noticias.service';
+import { Noticias } from 'src/app/interfaces/noticias';
 
 @Component({
   selector: 'app-game-list',
@@ -9,19 +11,31 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GameListComponent implements OnInit{
 
+  noticiasL : Noticias[] = [] // Noticias Locales
   noticias: any[] = [];
   secciones: string[] = ['business', 'technology', 'health'];
   seccionSeleccionada: string = 'technology'; // Sección por def
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private noticiasService : NoticiasService) { }
 
   ngOnInit() {
-    this.getNoticias(); 
+    this.getNoticias();
+    this.obtenerNoticias() 
 
 }
 
 // Noticas locales
-
+obtenerNoticias(): void{
+  this.noticiasService.getNotifcias().subscribe({
+    next: (data: Noticias[]) => {
+      this.noticiasL = data
+      console.log('Noticias obtenidas: ', this.noticias)
+    },
+    error: (error) => {
+      console.error('Error al obtener notcias: ', error)
+    }
+  })
+}
 
 
 // Noticas generadas de una API externa

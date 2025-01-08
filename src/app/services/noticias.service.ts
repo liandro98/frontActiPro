@@ -12,7 +12,7 @@ export class NoticiasService {
 
 
   // Modo produccion 
-  //  API_URL ='https://apiactpro.onrender.com/api';
+  //  API_URL ='https://apiactpro.onrender.com/api/noticias';
 
   constructor(private http : HttpClient) { }
 

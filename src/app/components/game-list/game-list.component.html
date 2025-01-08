@@ -41,6 +41,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     </div>
 
+  <div class="noticias-container">
+    <h2 class="titulo-noticias">Noticias Locales</h2>
+    <ul class="noticias-grid">
+      <li *ngFor="let noticia of noticiasL" class="noticia-item">
+        <h3>{{ noticia.titulo }}</h3>
+        <p>{{ noticia.descripcion }}</p>
+        <p>{{ noticia.contenido}}</p>
+      </li>
+    </ul>
+  </div>
+
 
      <div class="noticias-container">
         <h2 class="titulo-noticias">Noticias</h2>
