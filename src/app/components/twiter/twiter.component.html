@@ -1,0 +1,11 @@
+<div class="tweet-container">
+  <h2>Enviar Tweet</h2>
+  <textarea 
+    [(ngModel)]="tweet" 
+    placeholder="Escribe tu tweet aquí..." 
+    rows="4"
+    class="tweet-textarea"
+  ></textarea>
+  <button (click)="sendTweet()" class="tweet-button">Enviar Tweet</button>
+  <p *ngIf="message" class="tweet-message">{{ message }}</p>
+</div>

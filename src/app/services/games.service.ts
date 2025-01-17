@@ -74,5 +74,11 @@ export class GamesService {
     return this.http.get<any>(`${this.API_URI}/actividades/link/${idUsuario}`);
   }
   
+  sendTweet(tweet: string): Observable<any> {
+    return this.http.post(`${this.API_URI}/twitter/send-tweet`, { tweet });
+  }
+  
+
+  
 
 }

@@ -22,6 +22,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { ZoomComponent } from './components/zoom/zoom.component';
 import { LeafletMapComponent } from './components/leaflet-map/leaflet-map.component';
 import { FormNoticiaComponent } from './components/form-noticia/form-noticia.component';
+import { TwiterComponent } from './components/twiter/twiter.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { FormNoticiaComponent } from './components/form-noticia/form-noticia.com
     HomeComponent,
     ZoomComponent,
     LeafletMapComponent,
-    FormNoticiaComponent
+    FormNoticiaComponent,
+    TwiterComponent
   ],
   imports: [
     BrowserModule,

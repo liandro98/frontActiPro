@@ -11,6 +11,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { HomeComponent } from './components/home/home.component';
 import { ZoomComponent } from './components/zoom/zoom.component';
 import { FormNoticiaComponent } from './components/form-noticia/form-noticia.component';
+import { TwiterComponent } from './components/twiter/twiter.component';
 
 const routes: Routes = [
 
@@ -71,7 +72,8 @@ const routes: Routes = [
 
   { path: 'zoom', component: ZoomComponent },
 
-  { path: 'formNotcia', component: FormNoticiaComponent}
+  { path: 'formNotcia', component: FormNoticiaComponent},
+  { path: 'twiter', component: TwiterComponent}
 
 ];
 
