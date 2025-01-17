@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "actpro-dc75a"
-  }
+    "default": "actpro-dc75a",
+    "actPro": "actpro-dc75a"
+  },
+  "targets": {},
+  "etags": {}
 }

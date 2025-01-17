@@ -9,12 +9,12 @@ import { Observable } from 'rxjs';
 export class GamesService {
 
   // modo produccion
-  //private baseUrl = 'https://apiactpro.onrender.com/api';
-  //  API_URI='https://apiactpro.onrender.com/api';
+  private baseUrl = 'https://apiactpro.onrender.com/api';
+    API_URI='https://apiactpro.onrender.com/api';
 
   // modo desarrollo
-  private baseUrl = 'http://localhost:3000/api';
-    API_URI='http://localhost:3000/api';
+  //private baseUrl = 'http://localhost:3000/api';
+  //API_URI='http://localhost:3000/api';
 
   constructor(private http: HttpClient) { }
 
