@@ -65,4 +65,9 @@ export class GamesService {
     return this.http.get(`${this.API_URI}/user/${id}`);
   }
 
+  // Obtener reuniones
+  getTodayReunionLinks(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.API_URI}/actividades/reunion/today`);
+  }
+
 }

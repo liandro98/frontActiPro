@@ -69,6 +69,20 @@
       </div>
       <br>
       <br>
+      <div class="reunion-links">
+        <h2>Reuniones para Hoy</h2>
+        <ul *ngIf="links.length > 0; else noLinks">
+          <li *ngFor="let link of links">
+            <strong>{{ link.nombreActividad }}</strong>: 
+            <a [href]="link.enlace" target="_blank">{{ link.enlace }}</a>
+          </li>
+        </ul>
+      
+        <ng-template #noLinks>
+          <p>No hay reuniones programadas para hoy.</p>
+        </ng-template>
+      </div>
+      
 
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </div>

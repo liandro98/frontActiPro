@@ -8,6 +8,7 @@ export interface Activities{
     Fecha_de_inicio? : Date,
     Fecha_de_fin ?: Date,
     Lugar ?: string
+    fechaReunion?: string;
 }
 
 

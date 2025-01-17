@@ -28,6 +28,9 @@ export class GameFormComponent implements OnInit, AfterViewInit {
 
   title = 'angular-paypal-payment';
 
+  // enlaces para reuniones
+  links: any[] = [];
+
   act: any = [];
   usuarios: any = {};
 
@@ -74,7 +77,12 @@ export class GameFormComponent implements OnInit, AfterViewInit {
       console.error('El idUsuario es undefined');
       this.router.navigate(['/home']);
     }
+
+    // Cargar reuniones
+    this.loadTodayReunionLinks();
   }
+
+
   //Para que aparezca el mapa
   ngAfterViewInit(): void {
     if (this.mapContainer) {
@@ -201,5 +209,17 @@ export class GameFormComponent implements OnInit, AfterViewInit {
   }
   mostrarValor() {
     console.log('Valor del input:', this.inputValue);
+  }
+
+  // Obtener reuniones el dia de hoy
+  loadTodayReunionLinks(): void {
+    this.gameService.getTodayReunionLinks().subscribe(
+      (data) => {
+        this.links = data;
+      },
+      (error) => {
+        console.error('Error fetching today\'s reunion links', error);
+      }
+    );
   }
 }
