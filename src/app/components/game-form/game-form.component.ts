@@ -30,6 +30,7 @@ export class GameFormComponent implements OnInit, AfterViewInit {
 
   // enlaces para reuniones
   links: any[] = [];
+  enlaceReunion: string | null = null;
 
   act: any = [];
   usuarios: any = {};
@@ -79,7 +80,24 @@ export class GameFormComponent implements OnInit, AfterViewInit {
     }
 
     // Cargar reuniones
-    this.loadTodayReunionLinks();
+    // Obtener el idUsuario del usuario autenticado
+    const idUsuario = this.authService.getIdUsuario();
+
+    if (idUsuario) {
+      this.gameService.getMeetingLink(idUsuario).subscribe({
+        next: (response) => {
+          this.enlaceReunion = response.enlace;
+        },
+        error: (err) => {
+          console.error('Error:', err.message);
+          this.enlaceReunion = null;
+        },
+      });
+    } else {
+      console.warn('Usuario no autenticado');
+      this.enlaceReunion = null;
+    }
+    
   }
 
 
@@ -212,8 +230,9 @@ export class GameFormComponent implements OnInit, AfterViewInit {
   }
 
   // Obtener reuniones el dia de hoy
+  /*
   loadTodayReunionLinks(): void {
-    this.gameService.getTodayReunionLinks().subscribe(
+    this.gameService.getTodayReunionLinks(this.idUsuario).subscribe(
       (data) => {
         this.links = data;
       },
@@ -222,4 +241,5 @@ export class GameFormComponent implements OnInit, AfterViewInit {
       }
     );
   }
+    */
 }

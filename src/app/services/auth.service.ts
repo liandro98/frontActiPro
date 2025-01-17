@@ -45,4 +45,9 @@ setCurrentUser() {
 getCurrentUser(): Usuarios | null {
   return this.currentUser;
 }
+
+getIdUsuario(): any {
+  return this.currentUser?this.currentUser.idUsuario : null;
+}
+
 }
