@@ -15,6 +15,17 @@ export class GameListComponent implements OnInit{
   noticias: any[] = [];
   secciones: string[] = ['business', 'technology', 'health'];
   seccionSeleccionada: string = 'technology'; // Sección por def
+  menuVisible = false;
+
+  toggleMenu() {
+    this.menuVisible = !this.menuVisible;
+    console.log('Menú visible:', this.menuVisible); // Para depurar
+    const nav = document.querySelector('#nav-menu');
+    if (nav) {
+      nav.classList.toggle('show', this.menuVisible);
+    }
+  }
+  
 
   constructor(private http: HttpClient, private noticiasService : NoticiasService) { }
 

@@ -1,19 +1,25 @@
 
     <div>
-        <div class="header-blue">
-            <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search">
-                <div class="container">
-                  <a class="navbar-brand" href="#">ActiPro</a>
-                  <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse"
-                        id="navcol-1">
-                        
-                        <form class="form-inline mr-auto" target="_self">
-                            <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
-                        </form><span class="navbar-text"> <a routerLink="/login"class="login">Iniciar Sesion</a></span><a class="btn btn-light action-button" role="button" routerLink="/register">Registrarse</a></div>
-                </div>
+      <div>
+        <header class="header">
+          <div class="container">
+            <a class="brand" href="#">ActiPro</a>
+            <button class="menu-toggle" aria-expanded="false" aria-label="Abrir menú" (click)="toggleMenu()">
+              <span class="hamburger"></span>
+            </button>
+            <nav class="nav" id="nav-menu">
+              <ul class="nav-list">
+                <li><a href="/home">Inicio</a></li>
+                <li><a href="/about">Acerca de</a></li>
+                <li><a routerLink="/login">Iniciar Sesión</a></li>
+                <li><a class="btn" routerLink="/register">Registrarse</a></li>
+              </ul>
             </nav>
-    </div>
+          </div>
+        </header>
+      </div>
+      
+
     <div class="article-clean">
       <div class="container">
           <div class="row"> 
