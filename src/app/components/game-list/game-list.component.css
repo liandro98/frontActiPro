@@ -69,7 +69,9 @@
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000; /* Agregar esto para asegurarte de que el menú esté encima */
 }
+
 
 .nav-list {
   list-style: none;
@@ -129,6 +131,7 @@
   line-height:1.5;
   color:inherit;
   margin-top:20px;
+  z-index: 1;
 }
 
 .article-clean .intro p {

@@ -19,10 +19,14 @@ export class GameListComponent implements OnInit{
 
   toggleMenu() {
     this.menuVisible = !this.menuVisible;
-    console.log('Menú visible:', this.menuVisible); // Para depurar
+    console.log('Menú visible:', this.menuVisible);
     const nav = document.querySelector('#nav-menu');
+    const menuToggle = document.querySelector('.menu-toggle');
     if (nav) {
       nav.classList.toggle('show', this.menuVisible);
+    }
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-expanded', this.menuVisible.toString());
     }
   }
   

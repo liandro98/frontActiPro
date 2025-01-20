@@ -21,6 +21,13 @@ export class NavigationComponent {
     nombreRol  : ''
   }
 
+  menuVisible = false;
+
+toggleMenu() {
+  this.menuVisible = !this.menuVisible;
+}
+
+
   constructor(private gameService: GamesService, private authService: AuthService){}
   ngOnInit(): void {
 
