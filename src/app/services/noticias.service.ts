@@ -8,11 +8,11 @@ import { Noticias } from '../interfaces/noticias';
 })
 export class NoticiasService {
   // Modo desarrollo 
-  //private API_URL = 'http://localhost:3000/api/noticias';
+  private API_URL = 'http://localhost:3000/api/noticias';
 
 
   // Modo produccion 
-    API_URL ='https://apiactpro.onrender.com/api/noticias';
+  //  API_URL ='https://apiactpro.onrender.com/api/noticias';
 
   constructor(private http : HttpClient) { }
 
